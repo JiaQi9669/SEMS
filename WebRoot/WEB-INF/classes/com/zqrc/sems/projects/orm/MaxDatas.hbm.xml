@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.zqrc.sems.projects.orm.MaxDatas" table="datas_max">
+        <id name="id" type="integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		
+		<property name="tem" type="integer"/>
+		<property name="hum" type="integer"/>
+		<property name="pm25" type="integer"/>
+		<property name="smog" type="integer"/>
+		<property name="light" type="integer"/>
+		<property name="noise" type="integer"/>
+		<property name="date" type="timestamp"/>
+    </class>
+</hibernate-mapping>

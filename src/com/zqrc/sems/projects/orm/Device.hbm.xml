@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.zqrc.sems.projects.orm.Device" table="device">
+        <id name="id" type="integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+		
+		<property name="name" type="string"/>
+		<property name="info" type="string"/>
+		<property name="ip" type="string"/>
+		<property name="tudex" type="string"/>
+		<property name="tudey" type="string"/>
+		<property name="upline" type="timestamp"/>
+		<property name="offline" type="timestamp" not-null="false"/>
+		<set name="datas" inverse="true">
+			<key column="device_datas"/>
+			<one-to-many class="com.zqrc.sems.projects.orm.Datas"/>
+		</set>
+		
+    </class>
+</hibernate-mapping>

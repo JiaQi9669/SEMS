@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 配置文件 -->
+	<include file="struts_config.xml"></include>
+	<!-- 数据展示 -->
+	<include file="struts_view.xml"></include>
+	<!-- 设备控制 -->
+	<include file="struts_admin.xml"></include>
+	<!-- 上传下载 -->
+	<!-- <include file="struts_FileUpDown.xml"></include> -->
+</struts>    

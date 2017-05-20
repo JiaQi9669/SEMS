@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 数据展示 -->
+	<package name="view" extends="struts-default" namespace="/">
+		<action name="view*" class="com.zqrc.sems.projects.action.ViewAction" method="{1}">
+			<!-- 首页 -->
+			<result name="index">/WEB-INF/view/index.jsp</result><!-- view_map -->
+			<!-- 全景图 -->
+			<result name="map">/WEB-INF/view/view_map.jsp</result><!-- view_map -->
+			<!-- 实时动态数据 -->
+			<result name="time">/WEB-INF/view/view_time.jsp</result>
+			<!-- 总览 -->
+			<result name="all">/WEB-INF/view/view_all.jsp</result>
+			<!-- 自定义参数 -->
+			<result name="diy">/WEB-INF/view/view_diy.jsp</result>
+			<!-- 极限情况 -->
+			<result name="max">/WEB-INF/view/view_max.jsp</result>
+			
+			<!-- 登录页 -->
+			<result name="login" >/login.jsp</result>
+			<!-- 退出页 -->
+			<result name="exit">/exit.jsp</result>
+			
+			<!-- 添加人员 -->
+			<result name="add">/WEB-INF/admin/admin_person_add.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="filter"  extends="json-default" namespace="/">
+		<action name="asyn*" class="com.zqrc.sems.projects.action.DataAction" method="{1}">
+			<!-- 新闻 -->
+			<result name="news" type="json">
+                <param name="root">result</param>
+            </result>
+            <!-- 地图 -->
+            <result name="maps" type="json">
+                <param name="root">result</param>
+            </result>
+		</action>
+	</package>
+	
+</struts>

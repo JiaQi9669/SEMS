@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!--  -->
+	<package name="admin" extends="struts-default" namespace="/">
+		<!-- 基础视图 -->
+		<action name="admin*" class="com.zqrc.sems.projects.action.AdminAction" method="{1}">
+			<!-- 环境参数设置 -->
+			<result name="data">/WEB-INF/admin/admin_data_set.jsp</result>
+			<!-- 设备设置 -->
+			<result name="device">/WEB-INF/admin/admin_device.jsp</result>
+			<!-- 设备更新 -->
+			<result name="deviceupdata">/WEB-INF/admin/admin_device_update.jsp</result>
+			<!-- 报表生成 -->
+			<result name="report">/WEB-INF/admin/admin_report.jsp</result>
+			
+			<!-- 个人密码 -->
+			<result name="pass">/WEB-INF/admin/admin_pass_set.jsp</result>
+			<!-- 人员管理 -->
+			<result name="person">/WEB-INF/admin/admin_person_set.jsp</result>
+			
+			<!-- 添加人员 -->
+			<result name="add">/WEB-INF/admin/admin_person_add.jsp</result>
+			
+			<!-- 登录页 -->
+			<result name="login" >/login.jsp</result>
+			<!-- 登陆成功的首页 -->
+			<result name="index">/WEB-INF/view/index.jsp</result>
+		</action>
+		
+		<action name="max*" class="com.zqrc.sems.projects.action.MaxDataAction" method="{1}">
+			<result name="updata">/WEB-INF/admin/admin_data_set.jsp</result>
+		</action>
+		
+		<action name="device*" class="com.zqrc.sems.projects.action.DeviceAction" method="{1}">
+			<result name="index">/WEB-INF/admin/admin_device.jsp</result>
+			<result name="view">/WEB-INF/admin/admin_device_updataview.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>
